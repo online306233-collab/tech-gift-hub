@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>১২-পিস হালাল আতর কম্বো প্যাক</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Poppins', sans-serif; background:#f0f2f5; color:#333; scroll-behavior:smooth; }
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg,#f857a6,#ff5858);
+  text-align:center;
+  padding:120px 20px;
+  color:#fff;
+  position:relative;
+}
+.hero h1 { font-size:3rem; font-weight:800; margin-bottom:15px; text-shadow:2px 2px 10px rgba(0,0,0,0.4);}
+.hero p { font-size:1.3rem; max-width:600px; margin:0 auto 30px; text-shadow:1px 1px 5px rgba(0,0,0,0.3);}
+.hero img { max-width:320px; border-radius:25px; margin:20px 0; box-shadow:0 20px 50px rgba(0,0,0,0.4); transition:transform 0.5s; }
+.hero img:hover { transform:scale(1.05) rotate(-2deg); }
+
+/* Order Button */
+.btn {
+  display:inline-block;
+  padding:20px 55px;
+  background:linear-gradient(90deg,#ffba00,#ff5722);
+  color:#fff;
+  border-radius:60px;
+  font-weight:700;
+  font-size:1.6rem;
+  text-decoration:none;
+  transition:0.5s;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+.btn:hover { background:linear-gradient(90deg,#ff8f00,#e64a19); transform:scale(1.1) rotate(-1deg); }
+
+/* Sections */
+.section { padding:80px 20px; max-width:1000px; margin:auto; }
+.section h2 { font-size:2.5rem; margin-bottom:35px; text-align:center; color:#ff5722; text-shadow:1px 1px 5px rgba(0,0,0,0.2); }
+
+/* Description Section */
+.description { background:linear-gradient(135deg,#fdfbfb,#ebedee); padding:40px; border-radius:25px; box-shadow:0 12px 40px rgba(0,0,0,0.2); margin-bottom:60px; transition:transform 0.5s; }
+.description:hover { transform:scale(1.02); }
+.description ul { list-style-type: disc; padding-left:30px; margin-top:20px; }
+.description li { margin-bottom:12px; font-weight:500; font-size:1.1rem; }
+
+/* Product Gallery */
+.product-gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:15px;
+  justify-items:center;
+  margin-top:30px;
+}
+.product-gallery img {
+  width:120px;
+  height:120px;
+  object-fit:cover;
+  border-radius:15px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  transition:transform 0.3s, box-shadow 0.3s;
+}
+.product-gallery img:hover {
+  transform:scale(1.1);
+  box-shadow:0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* Form Section */
+form { max-width:520px; margin:auto; background:linear-gradient(145deg,#cfd9df,#e2ebf0); padding:40px; border-radius:25px; box-shadow:0 15px 40px rgba(0,0,0,0.25); transition:transform 0.4s; }
+form:hover { transform:scale(1.02); }
+form label { display:block; margin-top:15px; font-weight:600; color:#444; }
+form input, form textarea, form select { width:100%; padding:16px; margin-top:6px; border:1px solid #ccc; border-radius:12px; font-size:1rem; transition:0.3s; }
+form input:focus, form textarea:focus, form select:focus { border-color:#ff5722; box-shadow:0 0 15px rgba(255,87,34,0.3); outline:none; }
+form button { background:linear-gradient(90deg,#ff5722,#ff9800); color:#fff; border:none; padding:18px; width:100%; border-radius:15px; margin-top:25px; font-size:1.25rem; cursor:pointer; font-weight:700; transition:0.4s; }
+form button:hover { background:linear-gradient(90deg,#ff7043,#f57c00); transform:scale(1.05) rotate(-1deg); }
+
+/* Price Box below Form */
+.price-box {
+  background:linear-gradient(135deg,#ff7e5f,#feb47b);
+  border-left:6px solid #ff5722;
+  padding:22px 25px;
+  margin-top:25px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 12px 35px rgba(0,0,0,0.25);
+  transition:transform 0.3s;
+}
+.price-box:hover { transform:scale(1.02); }
+.price-box h3 { font-size:1.7rem; color:#fff; margin-bottom:10px; font-weight:700; text-shadow:1px 1px 6px rgba(0,0,0,0.3);}
+.price-box p { font-size:1.25rem; color:#fff; margin:0; font-weight:600; text-shadow:1px 1px 5px rgba(0,0,0,0.2); }
+
+/* Footer */
+footer { background:#212121; color:#ccc; text-align:center; padding:25px; margin-top:50px; font-size:0.95rem; }
+footer a { color:#ffb74d; text-decoration:none; }
+
+/* WhatsApp Button Horizontal */
+.whatsapp-btn {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  border-radius:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 18px;
+  font-weight:600;
+  font-size:16px;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  transition:0.4s;
+  z-index:1000;
+}
+.whatsapp-btn:hover { transform:scale(1.1); background:#1ebe57; }
+.whatsapp-icon { font-size:24px; margin-right:8px; }
+.whatsapp-text { font-size:16px; font-weight:600; }
+
+/* Responsive */
+@media(max-width:480px){
+  .whatsapp-btn { padding:10px 14px; font-size:14px; }
+  .whatsapp-icon { font-size:20px; margin-right:6px; }
+  .whatsapp-text { font-size:14px; }
+  .product-gallery { grid-template-columns:repeat(auto-fit,minmax(90px,1fr)); }
+  .product-gallery img { width:90px; height:90px; }
+  .hero h1 { font-size:2.2rem; }
+  .hero p { font-size:1.1rem; }
+  .btn { font-size:1.4rem; padding:16px 40px; }
+  .section h2 { font-size:2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<div class="hero">
+  <h1>✨ ১২-পিস হালাল আতর কম্বো প্যাক ✨</h1>
+  <p>এক প্যাকেই ১২টি অনন্য এবং মনোমুগ্ধকর আতর, প্রতিটি ৩মি.লি. বোতল।</p>
+  <img src="product.jpg" alt="12-Piece Attar Combo Pack">
+  <a href="#order" class="btn">অর্ডার করুন</a>
+</div>
+
+<!-- Product Description -->
+<div class="section description">
+  <h2>ব্র্যান্ড: RT পারফিউম / আয়না আতর</h2>
+  <p>আপনার দৈনন্দিন ব্যবহার বা উপহারের জন্য পারফেক্ট! এক প্যাকেই ১২টি অনন্য আতর।</p>
+  <h3>অন্তর্ভুক্ত আতরগুলো:</h3>
+  <ul>
+    <li>ম্যাগনেট</li>
+    <li>কাঁচা বেলি</li>
+    <li>শাহী দরবার</li>
+    <li>বকুল ফুল</li>
+    <li>রজনী গন্ধা</li>
+    <li>গুলে লাল</li>
+  </ul>
+  <h3>বৈশিষ্ট্য:</h3>
+  <ul>
+    <li>💖 ১০০% হালাল আতর</li>
+    <li>🌿 প্রাকৃতিক এবং কোমল সুগন্ধি</li>
+    <li>🎁 ৩মি.লি. বোতল, ভ্রমণ বা স্যাম্পলিংয়ের জন্য আদর্শ</li>
+    <li>👜 এক প্যাকেই ১২টি আলাদা সুগন্ধি</li>
+  </ul>
+
+  <!-- Product Gallery -->
+  <div class="product-gallery">
+    <img src="attar1.jpg" alt="ম্যাগনেট আতর">
+    <img src="attar2.jpg" alt="কাঁচা বেলি আতর">
+    <img src="attar3.jpg" alt="শাহী দরবার আতর">
+    <img src="attar4.jpg" alt="বকুল ফুল আতর">
+    <img src="attar5.jpg" alt="রজনী গন্ধা আতর">
+    <img src="attar6.jpg" alt="গুলে লাল আতর">
+  
+  </div>
+</div>
+
+<!-- Order Form Section -->
+<div class="section" id="order">
+  <h2>অর্ডার ফর্ম</h2>
+  <form onsubmit="sendToWhatsApp(event)">
+    <label>নাম:</label>
+    <input type="text" id="name" placeholder="আপনার নাম লিখুন" required>
+
+    <label>মোবাইল নম্বর:</label>
+    <input type="text" id="phone" placeholder="আপনার ফোন নাম্বার লিখুন" required>
+
+    <label>ঠিকানা:</label>
+    <textarea id="address" rows="4" placeholder="আপনার ঠিকানা লিখুন" required></textarea>
+
+    <label>আপনার এলাকা:</label>
+    <select id="area" required>
+      <option value="">-- এলাকা নির্বাচন করুন --</option>
+      <option value="dhaka">ঢাকার ভিতরে</option>
+      <option value="outside">ঢাকার বাইরে</option>
+    </select>
+
+    <button type="submit">অর্ডার কনফার্ম করুন</button>
+  </form>
+
+  <!-- Price Box Below Form -->
+  <div class="price-box">
+    <h3>💰 প্রোডাক্ট দাম: 590 টাকা</h3>
+    <p>🚚 ডেলিভারি চার্জ: <span id="delivery-charge">-</span></p>
+  </div>
+</div>
+
+<footer>
+  © 2025 আপনার কোম্পানি | সর্বস্বত্ব সংরক্ষিত
+</footer>
+
+<!-- WhatsApp Button Horizontal -->
+<a href="https://wa.me/8801753146192" class="whatsapp-btn" target="_blank">
+  <span class="whatsapp-icon">💬</span>
+  <span class="whatsapp-text">WhatsApp</span>
+</a>
+
+<script>
+const areaSelect=document.getElementById("area");
+const deliveryCharge=document.getElementById("delivery-charge");
+areaSelect.addEventListener("change",function(){
+  if(this.value==='dhaka') deliveryCharge.innerText='50 টাকা (ঢাকার ভিতরে)';
+  else if(this.value==='outside') deliveryCharge.innerText='100 টাকা (ঢাকার বাইরে)';
+  else deliveryCharge.innerText='-';
+});
+function sendToWhatsApp(event){
+  event.preventDefault();
+  let name=document.getElementById("name").value;
+  let phone=document.getElementById("phone").value;
+  let address=document.getElementById("address").value;
+  let area=document.getElementById("area").value;
+  let charge=area==='dhaka'?50:100;
+  let message=`অর্ডার ডিটেইলস:%0A👤 নাম: ${name}%0A📞 মোবাইল: ${phone}%0A🏠 ঠিকানা: ${address}%0A📍 এলাকা: ${area==='dhaka'?'ঢাকার ভিতরে':'ঢাকার বাইরে'}%0A💰 প্রোডাক্ট দাম: 590 টাকা%0A🚚 ডেলিভারি চার্জ: ${charge} টাকা`;
+  let url="https://wa.me/8801753146192?text="+message;
+  window.open(url,"_blank");
+}
+</script>
+</body>
+</html>
