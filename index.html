@@ -126,8 +126,8 @@ const customerName = document.getElementById('customer-name');
 const customerMobile = document.getElementById('customer-mobile');
 const customerAddress = document.getElementById('customer-address');
 
-// ✅ নতুন Web App URL ব্যবহার
-const scriptURL = "https://script.google.com/macros/s/AKfycbwJ5qeJeQ4Ts2Poy6zz2VsMx3QJcXjNMEZQM7Di26Q8TXW6wspiHLbOs1gclzBg03rwcw/exec";
+// ✅ আপনার Web App Link
+const scriptURL = "https://script.google.com/macros/s/AKfycbwFTw9CS2wJ2VCj_SpMaw82T5QW-Eyq0hr9hYCTcjluV2au92XwzaSL7UBAtWTSbABY/exec";
 
 function updateTotalPrice() {
   let total = deliveryCharge;
@@ -141,7 +141,7 @@ function updateTotalPrice() {
   totalPriceSpan.innerText = total;
 }
 
-// Product select + auto select on quantity change + bounce
+// Product select + auto select on quantity change
 productFrames.forEach(frame => {
   frame.addEventListener('click', (e) => {
     if (!e.target.classList.contains('increase') && 
@@ -194,10 +194,14 @@ document.getElementById('confirm-order').addEventListener('click', (e) => {
   }
 
   let selectedProducts = [];
+  let quantities = [];
   productFrames.forEach(frame => {
     if (frame.classList.contains('selected')) {
       const qty = parseInt(frame.querySelector('.quantity').value);
-      if (qty > 0) selectedProducts.push(`${frame.dataset.name}: ${qty} পিস`);
+      if (qty > 0) {
+        selectedProducts.push(frame.dataset.name);
+        quantities.push(qty);
+      }
     }
   });
 
@@ -208,19 +212,22 @@ document.getElementById('confirm-order').addEventListener('click', (e) => {
 
   const orderData = {
     name: customerName.value,
-    mobile: customerMobile.value,
+    phone: customerMobile.value,
     address: customerAddress.value,
-    products: selectedProducts.join(", "),
-    total: totalPriceSpan.innerText,
-    delivery: deliveryCharge
+    area: "N/A", // চাইলে আলাদা ইনপুট রাখতে পারেন
+    items: selectedProducts,
+    qty: quantities,
+    total: totalPriceSpan.innerText
   };
 
   fetch(scriptURL, {
     method: "POST",
-    body: new URLSearchParams(orderData)
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(orderData)
   })
+  .then(res => res.json())
   .then(res => {
-    if(res.ok){
+    if(res.status === "success"){
       alert("✅ আপনার অর্ডার সফলভাবে জমা হয়েছে!");
       customerName.value = "";
       customerMobile.value = "";
@@ -231,7 +238,7 @@ document.getElementById('confirm-order').addEventListener('click', (e) => {
       });
       updateTotalPrice();
     } else {
-      alert("❌ কিছু সমস্যা হয়েছে, আবার চেষ্টা করুন!");
+      alert("❌ কিছু সমস্যা হয়েছে: " + res.message);
     }
   })
   .catch(err => alert("❌ কিছু সমস্যা হয়েছে, আবার চেষ্টা করুন!"));
